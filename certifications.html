@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Certifications — Dita Anggraini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Dita.</a>
+    <ul class="nav-pages">
+      <li><a href="../index.html" data-page="home">Home</a></li>
+      <li><a href="experience.html" data-page="experience">Experience</a></li>
+      <li><a href="projects.html" data-page="projects">Projects</a></li>
+      <li><a href="certifications.html" data-page="certifications">Certifications</a></li>
+      <li><a href="contact.html" data-page="contact">Contact</a></li>
+    </ul>
+    <button id="theme-tog" aria-label="Toggle dark mode">☀ / ☾</button>
+    <button id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-drawer" id="mob-drawer">
+  <ul>
+    <li><a href="../index.html" data-page="home">Home</a></li>
+    <li><a href="experience.html" data-page="experience">Experience</a></li>
+    <li><a href="projects.html" data-page="projects">Projects</a></li>
+    <li><a href="certifications.html" data-page="certifications">Certifications</a></li>
+    <li><a href="contact.html" data-page="contact">Contact</a></li>
+  </ul>
+</div>
+
+<div class="page-wrap">
+
+  <div class="page-hero">
+    <div class="wrap">
+      <span class="tag">Credentials</span>
+      <h1>Certifications &amp; <em>Training</em></h1>
+      <p>Professional certifications and training programmes that validate my expertise in data analysis and visualization.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-ctrl">
+        <h2 class="sh" style="margin-bottom:0">My Certifications</h2>
+        <button class="btn btn-p btn-sm admin-only" data-saved-display="inline-flex" onclick="openAddCertModal()">+ Add Certification</button>
+      </div>
+      <div id="cert-list" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Languages section -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <span class="tag">Languages</span>
+      <h2 class="sh">Language <em>Proficiency</em></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:8px">
+        <div class="card fu">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <h3 style="font-family:var(--display);font-size:1.05rem;font-weight:700">English</h3>
+            <span class="chip">Ukbing UM 460</span>
+          </div>
+          <div style="height:4px;background:var(--bg2);border-radius:2px;margin-bottom:8px">
+            <div style="height:100%;width:72%;background:var(--txt);border-radius:2px"></div>
+          </div>
+          <p style="font-size:.8rem;color:var(--muted)">Professional working proficiency</p>
+        </div>
+        <div class="card fu" style="transition-delay:.08s">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <h3 style="font-family:var(--display);font-size:1.05rem;font-weight:700">Bahasa Indonesia</h3>
+            <span class="chip hi">C2 Native</span>
+          </div>
+          <div style="height:4px;background:var(--bg2);border-radius:2px;margin-bottom:8px">
+            <div style="height:100%;width:100%;background:var(--txt);border-radius:2px"></div>
+          </div>
+          <p style="font-size:.8rem;color:var(--muted)">Native speaker</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2025 Dita Anggraini Puspitasari</p>
+    <p>State University of Malang</p>
+  </div>
+</footer>
+
+<!-- ── CERT DETAIL MODAL (semua orang bisa lihat) ───────────── -->
+<div class="modal-backdrop" id="modal-cert-detail">
+  <div class="modal" style="max-width:600px" role="dialog" aria-modal="true" aria-labelledby="cert-detail-title">
+    <div class="modal-header">
+      <h3 class="modal-title" id="cert-detail-title"></h3>
+      <button class="modal-close" onclick="closeModal('modal-cert-detail')" aria-label="Close">✕</button>
+    </div>
+    <!-- Certificate image -->
+    <div id="cert-detail-img-wrap" style="display:none;margin-bottom:20px">
+      <img id="cert-detail-img" src="" alt="Certificate" style="width:100%;border-radius:12px;border:1px solid var(--bdr);object-fit:contain;max-height:360px"/>
+    </div>
+    <!-- No image placeholder -->
+    <div id="cert-detail-no-img" style="width:100%;aspect-ratio:4/3;background:var(--bg2);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:3rem">🏅</div>
+
+    <p style="font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:6px" id="cert-detail-date"></p>
+    <p style="font-size:.95rem;color:var(--muted);margin-bottom:6px" id="cert-detail-org"></p>
+    <p style="font-size:.88rem;color:var(--muted);line-height:1.8;margin-bottom:20px" id="cert-detail-desc"></p>
+
+    <!-- Credential ID -->
+    <div id="cert-detail-cid-wrap" style="display:none;background:var(--bg2);border-radius:var(--r);padding:12px 16px;margin-bottom:20px;font-size:.83rem;color:var(--muted)">
+      <strong style="color:var(--txt)">Credential ID:</strong> <span id="cert-detail-cid"></span>
+    </div>
+
+    <!-- View cert link -->
+    <div id="cert-detail-link-wrap" style="display:none">
+      <a id="cert-detail-link" href="#" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:999px;background:var(--txt);color:var(--bg);font-size:.85rem;font-weight:500;text-decoration:none">
+        🔗 View Certificate
+      </a>
+    </div>
+
+    <!-- Admin buttons -->
+    <div class="admin-only" data-saved-display="flex" style="margin-top:20px;padding-top:20px;border-top:1px solid var(--bdr);display:flex;gap:10px">
+      <button class="btn btn-o btn-sm" id="cert-detail-edit-btn">✏ Edit</button>
+      <button class="btn btn-sm" style="border:1px solid #fca5a5;color:#b91c1c;background:transparent" id="cert-detail-delete-btn">✕ Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── ADD / EDIT CERTIFICATION MODAL (admin only) ───────────── -->
+<div class="modal-backdrop admin-only" id="modal-cert">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-cert-title">
+    <div class="modal-header">
+      <h3 class="modal-title" id="modal-cert-title">Add Certification</h3>
+      <button class="modal-close" onclick="closeModal('modal-cert')" aria-label="Close">✕</button>
+    </div>
+    <input type="hidden" id="cert-edit-id"/>
+
+    <!-- Certificate image upload -->
+    <div class="form-group">
+      <label>Foto / Scan Sertifikat</label>
+      <div style="border:2px dashed var(--bdr2);border-radius:var(--r);padding:20px;text-align:center;cursor:pointer;position:relative;transition:border-color .2s,background .2s" id="cert-img-area">
+        <input type="file" id="cert-img-file" accept="image/*" onchange="handleCertImg(this)"
+          style="position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%"/>
+        <div style="font-size:1.3rem;margin-bottom:6px">📜</div>
+        <p style="font-size:.8rem;color:var(--muted);margin:0"><span style="color:var(--txt);font-weight:500">Klik upload</span> gambar sertifikat (maks 2MB)</p>
+      </div>
+      <img id="cert-img-preview" src="" alt="" style="width:100%;border-radius:var(--r);margin-top:10px;display:none;max-height:240px;object-fit:contain;border:1px solid var(--bdr)"/>
+      <button id="cert-img-clear" onclick="clearCertImg()" style="display:none;margin-top:8px;background:none;border:1px solid #fca5a5;color:#b91c1c;border-radius:999px;padding:4px 12px;font-size:.75rem;cursor:pointer">✕ Hapus gambar</button>
+      <input type="hidden" id="cert-img-data"/>
+    </div>
+    <div class="form-group">
+      <label>Certification Name *</label>
+      <input type="text" id="cert-name" placeholder="e.g. Data Visualization Using Microsoft Power BI"/>
+    </div>
+    <div class="form-group">
+      <label>Issuing Organisation *</label>
+      <input type="text" id="cert-org" placeholder="e.g. IBLU Academy"/>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Date Issued</label>
+        <input type="text" id="cert-date" placeholder="July 2025"/>
+      </div>
+      <div class="form-group">
+        <label>Credential ID</label>
+        <input type="text" id="cert-cid" placeholder="Optional"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Description / Skills Covered</label>
+      <textarea id="cert-desc" rows="3" placeholder="Key skills, topics, or tools covered in this certification..."></textarea>
+    </div>
+    <div class="form-group">
+      <label>Certificate Link (URL)</label>
+      <input type="url" id="cert-link" placeholder="https://..."/>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-o btn-sm" onclick="closeModal('modal-cert')">Cancel</button>
+      <button class="btn btn-p btn-sm" onclick="saveCert()">Save</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<div id="admin-bar" onclick="promptAdminLogin()" title="Klik untuk keluar admin mode">
+  <div class="admin-dot"></div>
+  Admin Mode Aktif — Klik untuk keluar
+</div>
+
+<script src="../shared.js"></script>
+<script>
+const DEFAULT_CERT = [
+  {
+    id:'c1', name:'Data Visualization Using Microsoft Power BI',
+    org:'IBLU Academy', date:'July 2025', cid:'', img:'',
+    desc:'Mastered DAX formulas, data modeling, interactive dashboards, and Power Query ETL processes.',
+    link:''
+  },
+  {
+    id:'c2', name:'Data Analyst Professional Certificate',
+    org:'Vinix Academy – Inovasi Lentera Program', date:'Feb – June 2025', cid:'', img:'',
+    desc:'Comprehensive training in Tableau, Orange Data Mining, Python (Pandas, NumPy), Google Colab, Looker Studio with capstone e-commerce project.',
+    link:''
+  }
+];
+
+const CERT_KEY = 'dita-certifications';
+function loadCert() {
+  const raw = Store.get(CERT_KEY, null);
+  return raw === null ? DEFAULT_CERT : raw;
+}
+
+/* ── RENDER CARDS ─────────────────────────────────────────── */
+function renderCert() {
+  const list = document.getElementById('cert-list');
+  const data = loadCert();
+  if (!data.length) {
+    list.innerHTML = `<div class="empty" style="grid-column:1/-1"><p>Belum ada sertifikasi. Klik "+ Add Certification".</p></div>`;
+    return;
+  }
+  list.innerHTML = data.map((c, i) => `
+    <div class="card fu" style="transition-delay:${i*0.08}s;cursor:pointer" onclick="openCertDetail('${c.id}')">
+      ${c.img
+        ? `<img src="${c.img}" alt="${c.name}" style="width:100%;aspect-ratio:4/3;object-fit:contain;border-radius:8px;margin-bottom:14px;background:var(--bg2);border:1px solid var(--bdr)"/>`
+        : `<div style="width:100%;aspect-ratio:4/3;background:var(--bg2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:14px;border:1px solid var(--bdr)">🏅</div>`
+      }
+      <h3 style="font-family:var(--display);font-size:.97rem;font-weight:700;line-height:1.3;margin-bottom:4px">${c.name}</h3>
+      <p style="font-size:.8rem;color:var(--muted);margin-bottom:8px">${c.org}</p>
+      ${c.date ? `<p style="font-size:.68rem;color:var(--faint);font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">${c.date}</p>` : ''}
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-top:12px;border-top:1px solid var(--bdr)">
+        <span style="font-size:.75rem;color:var(--muted)">click for details →</span>
+        <div class="admin-only" data-saved-display="flex" style="display:flex;gap:6px" onclick="event.stopPropagation()">
+          <button style="padding:3px 9px;border-radius:99px;font-size:.68rem;border:1px solid var(--bdr);background:var(--bg);color:var(--muted);cursor:pointer" onclick="editCert('${c.id}')">✏</button>
+          <button style="padding:3px 9px;border-radius:99px;font-size:.68rem;border:1px solid #fca5a5;background:var(--bg);color:#b91c1c;cursor:pointer" onclick="deleteCert('${c.id}')">✕</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  initFadeUp();
+  applyAdminUI();
+}
+
+/* ── CERT DETAIL MODAL ────────────────────────────────────── */
+function openCertDetail(id) {
+  const c = loadCert().find(x => x.id === id);
+  if (!c) return;
+
+  document.getElementById('cert-detail-title').textContent = c.name;
+  document.getElementById('cert-detail-org').textContent   = c.org;
+  document.getElementById('cert-detail-date').textContent  = c.date || '';
+  document.getElementById('cert-detail-desc').textContent  = c.desc || '';
+
+  /* Image */
+  const imgWrap = document.getElementById('cert-detail-img-wrap');
+  const noImg   = document.getElementById('cert-detail-no-img');
+  if (c.img) {
+    document.getElementById('cert-detail-img').src = c.img;
+    imgWrap.style.display = ''; noImg.style.display = 'none';
+  } else {
+    imgWrap.style.display = 'none'; noImg.style.display = '';
+  }
+
+  /* Credential ID */
+  const cidWrap = document.getElementById('cert-detail-cid-wrap');
+  if (c.cid) {
+    document.getElementById('cert-detail-cid').textContent = c.cid;
+    cidWrap.style.display = '';
+  } else { cidWrap.style.display = 'none'; }
+
+  /* Link */
+  const linkWrap = document.getElementById('cert-detail-link-wrap');
+  if (c.link) {
+    document.getElementById('cert-detail-link').href = c.link;
+    linkWrap.style.display = '';
+  } else { linkWrap.style.display = 'none'; }
+
+  /* Admin buttons */
+  document.getElementById('cert-detail-edit-btn').onclick   = () => { closeModal('modal-cert-detail'); editCert(id); };
+  document.getElementById('cert-detail-delete-btn').onclick = () => { closeModal('modal-cert-detail'); deleteCert(id); };
+
+  openModal('modal-cert-detail');
+}
+
+/* ── IMAGE UPLOAD ─────────────────────────────────────────── */
+function handleCertImg(input) {
+  const file = input.files[0];
+  if (!file) return;
+  if (file.size > 2 * 1024 * 1024) { showToast('⚠ Gambar terlalu besar. Maks 2MB.'); input.value=''; return; }
+  const reader = new FileReader();
+  reader.onload = e => {
+    document.getElementById('cert-img-data').value = e.target.result;
+    const p = document.getElementById('cert-img-preview');
+    p.src = e.target.result; p.style.display = 'block';
+    document.getElementById('cert-img-clear').style.display = 'inline-flex';
+  };
+  reader.readAsDataURL(file);
+}
+
+function clearCertImg() {
+  document.getElementById('cert-img-data').value = '';
+  document.getElementById('cert-img-file').value = '';
+  const p = document.getElementById('cert-img-preview');
+  p.src = ''; p.style.display = 'none';
+  document.getElementById('cert-img-clear').style.display = 'none';
+}
+
+/* ── ADD MODAL ────────────────────────────────────────────── */
+function openAddCertModal() {
+  clearCertForm();
+  document.getElementById('modal-cert-title').textContent = 'Add Certification';
+  openModal('modal-cert');
+}
+
+/* ── SAVE / EDIT / DELETE ─────────────────────────────────── */
+function saveCert() {
+  const name   = document.getElementById('cert-name').value.trim();
+  const org    = document.getElementById('cert-org').value.trim();
+  const date   = document.getElementById('cert-date').value.trim();
+  const cid    = document.getElementById('cert-cid').value.trim();
+  const desc   = document.getElementById('cert-desc').value.trim();
+  const link   = document.getElementById('cert-link').value.trim();
+  const img    = document.getElementById('cert-img-data').value;
+  const editId = document.getElementById('cert-edit-id').value;
+
+  if (!name || !org) { showToast('⚠ Nama dan Organisasi wajib diisi.'); return; }
+
+  let data = loadCert();
+  if (editId) {
+    data = data.map(c => c.id === editId ? { ...c, name, org, date, cid, desc, link, img } : c);
+    showToast('✓ Sertifikasi diperbarui!');
+  } else {
+    data.unshift({ id: genId(), name, org, date, cid, desc, link, img });
+    showToast('✓ Sertifikasi ditambahkan!');
+  }
+  Store.set(CERT_KEY, data);
+  closeModal('modal-cert');
+  clearCertForm();
+  renderCert();
+}
+
+function editCert(id) {
+  const c = loadCert().find(x => x.id === id);
+  if (!c) return;
+  clearCertForm();
+  document.getElementById('cert-edit-id').value = id;
+  document.getElementById('cert-name').value    = c.name;
+  document.getElementById('cert-org').value     = c.org;
+  document.getElementById('cert-date').value    = c.date || '';
+  document.getElementById('cert-cid').value     = c.cid  || '';
+  document.getElementById('cert-desc').value    = c.desc || '';
+  document.getElementById('cert-link').value    = c.link || '';
+  if (c.img) {
+    document.getElementById('cert-img-data').value = c.img;
+    const p = document.getElementById('cert-img-preview');
+    p.src = c.img; p.style.display = 'block';
+    document.getElementById('cert-img-clear').style.display = 'inline-flex';
+  }
+  document.getElementById('modal-cert-title').textContent = 'Edit Certification';
+  openModal('modal-cert');
+}
+
+function deleteCert(id) {
+  if (!confirm('Hapus sertifikasi ini?')) return;
+  Store.set(CERT_KEY, loadCert().filter(c => c.id !== id));
+  showToast('Dihapus.');
+  renderCert();
+}
+
+function clearCertForm() {
+  ['cert-edit-id','cert-name','cert-org','cert-date','cert-cid','cert-desc','cert-link'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  clearCertImg();
+  document.getElementById('modal-cert-title').textContent = 'Add Certification';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initNav('certifications');
+  renderCert();
+});
+</script>
+</body>
+</html>
